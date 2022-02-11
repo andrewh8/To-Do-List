@@ -3,7 +3,7 @@ import main from './index.js';
 
 const forms = (() => {
 
-    function closeTaskForm(){
+    function closeForm(){
         while (main.firstChild){
             main.removeChild(main.lastChild);
         }
@@ -11,11 +11,11 @@ const forms = (() => {
 
     function openTaskForm(){
         let taskForm = document.createElement('div');
-        taskForm.classList.add("taskFormBackground");
+        taskForm.classList.add("formBackground");
         taskForm.innerHTML = 
         `<div class="form">
             <div>
-                <div class="closeForm">+</div>
+                <div class="closeButton">+</div>
                 Add a Task
             </div>
             <form id="taskForm">
@@ -32,10 +32,10 @@ const forms = (() => {
         </div>`;
         main.appendChild(taskForm);
         // add event listeners for closing or submitting the form
-        const closeForm = document.querySelector('.closeForm');
-        closeForm.addEventListener('click', closeTaskForm)
+        const closeButton = document.querySelector('.closeButton');
+        closeButton.addEventListener('click', closeForm)
         let form = document.querySelector('#taskForm');
-        form.addEventListener('submit', forms.submitTaskForm);
+        form.addEventListener('submit', submitTaskForm);
     }
 
     function submitTaskForm(e){
@@ -46,10 +46,10 @@ const forms = (() => {
         const task = tasks.newTask(title, description); 
         tasks.addToTaskList(task);
         console.log(tasks.taskList);
-        closeTaskForm();
+        closeForm();
     }
 
-    return { openTaskForm, closeTaskForm, submitTaskForm };
+    return { openTaskForm };
 })()
 
 export default forms;

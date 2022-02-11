@@ -33,7 +33,7 @@ main {
     align-items: center;
 }
 
-.taskFormBackground {
+.formBackground {
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.3);
@@ -61,7 +61,7 @@ main {
     position: relative;
 }
 
-.closeForm {
+.closeButton {
     position: absolute;
     top: 0;
     right: 10px;
