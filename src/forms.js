@@ -1,13 +1,12 @@
 import main from './index.js';
 import tasks from './tasks.js';
 import projects from './projects.js';
+import display from './display.js';
 
 const forms = (() => {
 
     function closeForm(){
-        while (main.firstChild){
-            main.removeChild(main.lastChild);
-        }
+        main.removeChild(main.lastChild);
     }
 
     function openTaskForm(){
@@ -80,7 +79,6 @@ const forms = (() => {
         const notes = document.querySelector('#taskNotes').value;
         const checklist = document.querySelector('#taskChecklist').value;
         const project = document.querySelector('#taskProject').value;
-        console.log(`project = ${project}`);
         // create a task object based on form entries, add it to the taskList, assign it to a project, close form
         const task = tasks.newTask(title, description, dueDate, priority, notes, checklist, project); 
         tasks.addToTaskList(task);
@@ -88,6 +86,7 @@ const forms = (() => {
         console.log(tasks.taskList);
         console.log(projects.projectList);
         closeForm();
+        display.displayProjectList();
     }
 
     function openProjectForm(){
@@ -123,6 +122,7 @@ const forms = (() => {
         projects.addToProjectList(project);
         console.log(projects.projectList);
         closeForm();
+        display.displayProjectList();
     }
 
     return { openTaskForm, openProjectForm };
