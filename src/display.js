@@ -30,12 +30,27 @@ const display = (() => {
                 taskTitle.textContent = `${projects.projectList[i].taskList[j].title}`;
                 taskTitle.classList.add('taskTitle');
                 taskElement.appendChild(taskTitle);
-                const taskPriority = document.createElement('div');
-                taskPriority.textContent = `Priority: ${projects.projectList[i].taskList[j].priority}`;
-                taskElement.appendChild(taskPriority);
+
+                const taskDescription = document.createElement('div');
+                taskDescription.textContent = `Description: ${projects.projectList[i].taskList[j].description}`;
+                taskElement.appendChild(taskDescription);
+
                 const taskDueDate = document.createElement('div');
                 taskDueDate.textContent = `Due Date: ${projects.projectList[i].taskList[j].dueDate}`;
                 taskElement.appendChild(taskDueDate);
+
+                const taskPriority = document.createElement('div');
+                taskPriority.textContent = `Priority: ${projects.projectList[i].taskList[j].priority}`;
+                taskElement.appendChild(taskPriority);
+
+                const taskNotes = document.createElement('div');
+                taskNotes.textContent = `Notes: ${projects.projectList[i].taskList[j].notes}`;
+                taskElement.appendChild(taskNotes);
+
+                const taskChecklist = document.createElement('div');
+                taskChecklist.textContent = `Checklist: ${projects.projectList[i].taskList[j].checklist}`;
+                taskElement.appendChild(taskChecklist);
+                
                 projectTasks.appendChild(taskElement);
             }
             projectElement.appendChild(projectTasks);
