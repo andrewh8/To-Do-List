@@ -4,8 +4,8 @@ const tasks = (() => {
     const taskList = [];
 
     // factory for creating task objects
-    const newTask = (title, description, dueDate, priority, notes, checklist, project) => {
-        return { title, description, dueDate, priority, notes, checklist, project };
+    const newTask = (title, description, dueDate, project) => {
+        return { title, description, dueDate, project };
     }
 
     // function for adding task objects to the tasklist array

@@ -38,18 +38,7 @@ const forms = (() => {
                     <label>Due Date</label>
                     <input type="text" name="dueDate" id="taskDueDate">
                 </div>
-                <div>
-                    <label>Priority</label>
-                    <input type="text" name="priority" id="taskPriority">
-                </div>
-                <div>
-                    <label>Notes</label>
-                    <input type="text" name="notes" id="taskNotes">
-                </div>
-                <div>
-                    <label>Checklist</label>
-                    <input type="text" name="checklist" id="taskChecklist">
-                </div>
+
                 <div>
                     <label>Project</label>
                     <select name="project" id="taskProject">`
@@ -75,12 +64,12 @@ const forms = (() => {
         const title = document.querySelector('#taskTitle').value;
         const description = document.querySelector('#taskDescription').value;
         const dueDate = document.querySelector('#taskDueDate').value;
-        const priority = document.querySelector('#taskPriority').value;
-        const notes = document.querySelector('#taskNotes').value;
-        const checklist = document.querySelector('#taskChecklist').value;
+        // const priority = document.querySelector('#taskPriority').value;
+        // const notes = document.querySelector('#taskNotes').value;
+        // const checklist = document.querySelector('#taskChecklist').value;
         const project = document.querySelector('#taskProject').value;
         // create a task object based on form entries, add it to the taskList, assign it to a project, close form
-        const task = tasks.newTask(title, description, dueDate, priority, notes, checklist, project); 
+        const task = tasks.newTask(title, description, dueDate, project); 
         tasks.addToTaskList(task);
         projects.addTaskToProject(task);
         console.log(tasks.taskList);

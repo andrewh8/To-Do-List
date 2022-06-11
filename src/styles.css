@@ -9,7 +9,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin: 0px;
-    background-color: rgb(74, 91, 117);
+    background-color: #101D2D;
 }
 
 header {
@@ -45,7 +45,7 @@ main {
     align-items: center;
     gap: 10px;
     padding: 5px;
-    background-color: rgb(201, 195, 247);
+    background-color: white;
 }
 
 .formBackground {
@@ -92,7 +92,9 @@ main {
     width: 300px;
     font-size: 16px;
     gap: 10px;
-    background-color: rgb(181, 178, 206);
+    background-color: rgba(136, 135, 135, 0.541);
+    border-radius: 20px;
+    margin: 10px;
 }
 
 .projectTitle {
@@ -112,12 +114,15 @@ main {
 .taskElement {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 85%;
     gap: 5px;
-    text-align: left;
-    background-color: rgb(170, 166, 190);
+    text-align: center;
+    background-color: rgb(237, 236, 240);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
 }
 
 .taskTitle {
-    font-size: 20px;
+    font-size: 25px;
 }
